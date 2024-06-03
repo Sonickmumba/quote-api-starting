@@ -23,15 +23,15 @@ app.get('/api/quotes', (req, res, next) => {
   }
 })
 
-// app.post('/api/quotes', (req, res, next) => {
-//   const {quote, person } = req.query;
-//   if (!quote || !person) {
-//     res.status(400).send('Query properties do not exit');
-//   } else {
-//     quotes.push(req.query)
-//     res.send({quote: req.query})
-//   }
-// })
+app.post('/api/quotes', (req, res, next) => {
+  const {quote, person } = req.query;
+  if (!quote || !person) {
+    res.status(400).send('Query properties do not exit');
+  } else {
+    quotes.push(req.query)
+    res.send({quote: req.query})
+  }
+})
 
 app.listen(PORT, () => {
   console.log(`Listening to Port ${PORT}`)
