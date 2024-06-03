@@ -13,15 +13,15 @@ app.get('/api/quotes/random', (req, res, next) => {
   res.send(randomQuote);
 })
 
-// app.get('/api/quotes', (req, res, next) => {
-//   const person = req.query.person;
-//   const filteredArray = quotes.filter((quote) =>quote.person === person)
-//   if (person) {
-//     res.send({quotes: filteredArray})
-//   } else {
-//     res.send({quotes: quotes});
-//   }
-// })
+app.get('/api/quotes', (req, res, next) => {
+  const person = req.query.person;
+  const filteredArray = quotes.filter((quote) =>quote.person === person)
+  if (person) {
+    res.send({quotes: filteredArray})
+  } else {
+    res.send({quotes: quotes});
+  }
+})
 
 // app.post('/api/quotes', (req, res, next) => {
 //   const {quote, person } = req.query;
